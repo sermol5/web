@@ -7,600 +7,6 @@
     <title>Despacho Jurídico Lic.Eugenio Molina Cinco</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: 'Garamond', serif;
-            margin: 0;
-            padding: 0;
-            background-color: #0A2647;
-            color: #FFFFFF;
-        }
-
-        /* Estilos para el encabezado moderno */
-        header.moderno {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            /* Para posicionar .top-info absolutamente */
-        }
-
-        /* Estilos para la info superior */
-        .top-info {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1em; /* Aumenta el tamaño de la fuente */
-            color: #ddd;
-        }
-
-        header.moderno .nav {
-            margin-top: 15px;
-        }
-
-        header.moderno .nav a {
-            color: #FFFFFF;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s ease, font-weight 0.3s ease;
-            font-weight: normal;
-            position: relative;
-        }
-
-        header.moderno .nav a:hover {
-            color: #CCEEFF;
-            font-weight: bold;
-        }
-
-        header.moderno .nav a::before {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background-color: #CCEEFF;
-            transition: width 0.3s ease;
-        }
-
-        header.moderno .nav a:hover::before {
-            width: 70%;
-        }
-
-        /* Estilos para las secciones generales */
-        #nosotros,
-        #servicios,
-        #preguntas,
-        #contacto {
-            background-color: rgba(255, 255, 255, 0.75);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            color: #000;
-            transition: all 0.3s ease;
-        }
-
-        #nosotros:hover,
-        #servicios:hover,
-        #preguntas:hover,
-        #contacto:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Estilos para la sección "Nosotros" */
-        #nosotros .flex-container {
-            display: flex;
-            align-items: center;
-        }
-
-        #nosotros .imagen-container {
-            width: 50%;
-        }
-
-        #nosotros .texto-container {
-            width: 50%;
-            padding-left: 20px;
-        }
-
-        #nosotros img {
-            max-width: 80%;
-            height: auto;
-            display: block;
-            margin: 50px auto;
-        }
-
-        /* Estilos para la sección "Servicios" (modificados) */
-        #servicios h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #0A2647;
-        }
-
-        #servicios .servicios-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: stretch;
-            /* Para que todas las tarjetas tengan la misma altura */
-            flex-wrap: wrap;
-        }
-
-        .servicio-card {
-            background-color: rgba(255, 255, 255, 0.75);
-            /* Fondo semitransparente */
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            color: #333;
-            /* Color de texto más oscuro */
-            transition: all 0.3s ease;
-            width: calc(33% - 20px);
-            /* Tres columnas con margen */
-            min-width: 280px;
-            /* Ancho mínimo para responsividad */
-            box-sizing: border-box;
-            /* Incluye padding y border en el ancho */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .servicio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .servicio-card i {
-            font-size: 3em;
-            color: #0A2647;
-            margin-bottom: 10px;
-        }
-
-        .servicio-card h3 {
-            font-size: 1.5em;
-            color: #0A2647;
-            margin-bottom: 10px;
-        }
-
-        .servicio-card p {
-            font-size: 1em;
-            color: #555;
-            /* Color de texto más suave */
-            line-height: 1.4;
-            /* Mejora la legibilidad */
-        }
-
-        /* Media query para pantallas más pequeñas */
-        @media (max-width: 768px) {
-            .servicio-card {
-                width: calc(50% - 20px);
-                /* Dos columnas en pantallas medianas */
-            }
-        }
-
-        @media (max-width: 576px) {
-            .servicio-card {
-                width: 100%;
-                /* Una columna en pantallas pequeñas */
-            }
-        }
-
-        /* Estilos para la sección de Preguntas Frecuentes */
-        #preguntas {
-            width: 50%;
-            float: left;
-            padding: 16px;
-            box-sizing: border-box;
-        }
-
-        .respuesta {
-            display: none;
-            margin-top: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            color: #333;
-        }
-
-        .pregunta {
-            font-weight: bold;
-            cursor: pointer;
-            margin-bottom: 5px;
-            padding: 10px;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            color: #000;
-        }
-
-        .pregunta:hover {
-            background-color: #eee;
-        }
-
-        /* Estilos para la sección "Contacto" */
-        #contacto {
-            text-align: center;
-            /* Centra todo el contenido */
-        }
-
-        #contacto h2 {
-            color: #0A2647;
-            /* Mismo color que otros títulos */
-            margin-bottom: 20px;
-        }
-
-        #contacto h3 {
-            color: #0A2647;
-            /* Mismo color que otros subtítulos */
-            margin-bottom: 10px;
-        }
-
-        #contacto p {
-            color: #555;
-            /* Color del texto descriptivo */
-            margin-bottom: 20px;
-        }
-
-        /* Ajustes para los íconos de contacto */
-        .contact-icons {
-            display: flex;
-            justify-content: center;
-            /* Centra los íconos */
-            align-items: center;
-            /* Alinea los íconos verticalmente */
-            margin-top: 20px;
-        }
-
-        .contact-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            border-radius: 12px;
-            /* Bordes redondeados más suaves */
-            width: 45px;
-            /* Tamaño ligeramente menor */
-            height: 45px;
-            /* Tamaño ligeramente menor */
-            font-size: 22px;
-            /* Tamaño del ícono un poco más pequeño */
-            margin: 0 12px;
-            /* Reduce el margen */
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            transform: scale(1);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-            /* Sombra sutil */
-        }
-
-        .contact-icons a:hover {
-            opacity: 0.9;
-            /* Opacidad ligeramente menor al hacer hover */
-            transform: scale(1.05);
-            /* Aumento sutil al hacer hover */
-        }
-
-        /* Estilos específicos para los íconos */
-        .contact-icons a.whatsapp {
-            background-color: #25D366;
-            /* Verde original de WhatsApp */
-        }
-
-        .contact-icons a.messenger {
-            background-color: #0078FF;
-            /* Azul original de Messenger */
-        }
-
-        /* Estilos para el formulario de contacto moderno */
-        #contacto .modern-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #contacto .modern-form .form-group {
-            width: 100%;
-            max-width: 500px;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        #contacto .modern-form label {
-            display: block;
-            margin-bottom: 5px;
-            color: #555;
-        }
-
-        #contacto .modern-form input,
-        #contacto .modern-form textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-sizing: border-box;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-            color: #333;
-            background-color: #fff;
-        }
-
-        #contacto .modern-form input:focus,
-        #contacto .modern-form textarea:focus {
-            outline: none;
-            border-color: #0A2647;
-            box-shadow: 0 0 5px rgba(10, 38, 71, 0.3);
-        }
-
-        #contacto .modern-form button {
-            background-color: #0A2647;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-
-        #contacto .modern-form button:hover {
-            background-color: #153B6A;
-        }
-
-        /* Estilos para el pie de página moderno */
-        footer.moderno {
-            background-color: #0A2647;
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-
-        footer.moderno .footer-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        footer.moderno h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        footer.moderno p,
-        footer.moderno a {
-            color: #ddd;
-            text-decoration: none;
-            margin: 5px 0;
-            transition: color 0.3s ease;
-        }
-
-        footer.moderno a:hover {
-            color: #fff;
-        }
-
-        footer.moderno .footer-contact {
-            margin-top: 20px;
-        }
-
-        /* Estilos para la sección de derechos reservados */
-        .footer-copyright {
-            font-size: 0.8em;
-            color: #ccc;
-            margin-top: 20px;
-            padding-top: 10px;
-            border-top: 1px solid #333;
-            text-align: center;
-        }
-
-        /* Media query para pantallas más grandes */
-        @media (min-width: 768px) {
-            #nosotros .flex-container {
-                flex-direction: row;
-                align-items: center;
-                text-align: left;
-            }
-
-            #nosotros .imagen-container {
-                width: 40%;
-                margin-bottom: 0;
-                order: 2;
-            }
-
-            #nosotros .texto-container {
-                width: 60%;
-                padding-left: 40px;
-                text-align: left;
-                order: 1;
-            }
-
-            #nosotros img {
-                max-width: 100%;
-                margin: 0;
-                display: inline;
-            }
-
-            /*Tamaño de la foto-2a*/
-            #nosotros img {
-                max-width: 80%;
-                /* Ajusta el tamaño */
-                margin-top: 50px;
-            }
-        }
-
-        /* Estilos para la sección con el texto en la imagen */
-        .imagen-con-texto {
-            position: relative;
-            height: 400px;
-            overflow: hidden;
-        }
-
-        .imagen-con-texto img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-
-        .imagen-con-texto .texto-encima {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 1.7em;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            z-index: 1;
-            text-align: center;
-            padding: 20px;
-            max-width: 80%;
-            /* Limita el ancho del texto */
-        }
-
-        /* Clase para el contenedor del carrusel de fotos */
-        .imagenes-lado {
-            width: 50%;
-            /* Ocupa la mitad de la página restante */
-            float: left;
-            /* Alinea a la derecha */
-            box-sizing: border-box;
-            /* Incluye el padding en el ancho total */
-            position: relative;
-            /* Para posicionar los controles del carrusel */
-            overflow: hidden;
-            /* Recorta las imágenes que excedan el contenedor */
-            border-radius: 10px;
-            /* Bordes redondeados para un aspecto más moderno */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Sombra suave para destacar el carrusel */
-            height: 400px;
-            /* Asegura que el carrusel tenga una altura */
-        }
-
-        /* Estilos para las imágenes del carrusel */
-        .imagenes-lado img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            /* Permite la superposición de imágenes */
-            top: 0;
-            left: 0;
-            opacity: 0;
-            /* Oculta todas las imágenes inicialmente */
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-            /* Transición suave para la opacidad y la transformación */
-            border-radius: 10px;
-            /* Bordes redondeados para que coincidan con el contenedor */
-        }
-
-        /* Estilo para la imagen activa */
-        .imagenes-lado img.active {
-            opacity: 1;
-            /* Muestra la imagen activa */
-            transform: scale(1.05);
-            /* Ligeramente más grande para un efecto sutil */
-        }
-
-        /* Estilos para las flechas de navegación */
-        .carousel-control {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            z-index: 10;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .carousel-control:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .carousel-control.prev {
-            left: 10px;
-        }
-
-        .carousel-control.next {
-            right: 10px;
-        }
-
-        /* Estilos para los indicadores (dots) */
-        .carousel-indicators {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            display: flex;
-        }
-
-        .carousel-indicator {
-            width: 10px;
-            height: 10px;
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .carousel-indicator.active {
-            background-color: white;
-        }
-
-
-        .contact-container {
-            display: flex;
-            justify-content: center;
-            /* Centra horizontalmente */
-            align-items: center;
-            /* Centra verticalmente */
-            flex-direction: column;
-            /* Acomoda los elementos verticalmente */
-            text-align: center;
-            /* Centra el texto */
-        }
-
-        .contact-details {
-            /* Centra todo el contenido */
-            margin-right: 0;
-        }
-
-        .contact-details h3,
-        .contact-details p {
-            text-align: center;
-        }
-
-        .contact-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            /* Centra todo el contenido */
-        }
-
-        #contacto p {
-            text-align: center;
-            /* Alinea el texto al centro */
-            margin-bottom: 30px;
-            /* Espacio inferior mayor */
-            font-size: 1.2em;
-            /* Tamaño mayor */
-            color: #666;
-            /* Un color gris más oscuro */
-        }
-    </style>
 </head>
 
 <body>
@@ -615,15 +21,14 @@
             </h1>
         </div>
         <nav class="nav">
-            <a href="#nosotros" class="hover:text-[#A5B4FC]">Nosotros</a>
+            <a href="#nosotros" class="hover:text-[#A5B4FC]" aria-current="page">Nosotros</a>
             <a href="#servicios" class="hover:text-[#A5B4FC]">Servicios</a>
             <a href="#contacto" class="hover:text-[#A5B4FC]">Contacto</a>
         </nav>
     </header>
 
     <section class="imagen-con-texto">
-        <img src="C:\Recursos Humanos\escritorio\paguinas web\proyecto\DespachoJuridico - copia\images\foto-1a.jpg"
-            alt="Imponente edificio de juzgados con columnas clásicas y escaleras de mármol" />
+        <img src="images/foto-1a.jpg" alt="Imponente edificio de juzgados con columnas clásicas y escaleras de mármol" />
         <div class="texto-encima">Nuestro compromiso: Honestidad, seguimiento constante y soluciones prácticas que
             garanticen resultados positivos.</div>
     </section>
@@ -632,8 +37,8 @@
         <div class="max-w-6xl mx-auto">
             <div class="flex-container">
                 <div class="imagen-container">
-                    <img src="C:\Recursos Humanos\escritorio\paguinas web\proyecto\DespachoJuridico - copia\images\foto-2a.jpg"
-                        alt="Escudo oficial de la Universidad de Sonora" class="rounded-lg shadow-lg bg-white p-4" />
+                    <img src="images/foto-2a.jpg" alt="Escudo oficial de la Universidad de Sonora"
+                        class="rounded-lg shadow-lg bg-white p-4" />
                 </div>
                 <div class="texto-container">
                     <h2 class="text-3xl text-[#0A2647] mb-6 font-crimson-text">
@@ -701,7 +106,7 @@
             <div id="preguntas">
                 <h2 class="text-3xl text-center text-[#0A2647] mb-12">Preguntas Frecuentes</h2>
 
-                <div class="pregunta" onclick="toggleRespuesta('respuesta1')">
+                <div class="pregunta" data-respuesta="respuesta1">
                     Si mi aseguradora no me quiere pagar, ¿es necesario demandarlos?
                 </div>
                 <div class="respuesta" id="respuesta1">
@@ -710,7 +115,7 @@
                     evaluar tu caso y buscar la mejor vía para alcanzar una resolución justa y oportuna.
                 </div>
 
-                <div class="pregunta" onclick="toggleRespuesta('respuesta2')">
+                <div class="pregunta" data-respuesta="respuesta2">
                     Me han despedido de mi trabajo, ¿qué tengo que hacer?
                 </div>
                 <div class="respuesta" id="respuesta2">
@@ -719,7 +124,7 @@
                     sobre tus derechos y, si es necesario, representarte en acciones legales contra tu empleador.
                 </div>
 
-                <div class="pregunta" onclick="toggleRespuesta('respuesta3')">
+                <div class="pregunta" data-respuesta="respuesta3">
                     He decidido no continuar con mi matrimonio ¿Puedo divorciarme aunque mi pareja no esté de acuerdo?
                 </div>
                 <div class="respuesta" id="respuesta3">
@@ -728,7 +133,7 @@
                     necesarias para abordar este proceso de la manera más ágil y respetuosa posible.
                 </div>
 
-                <div class="pregunta" onclick="toggleRespuesta('respuesta4')">
+                <div class="pregunta" data-respuesta="respuesta4">
                     Tengo la preocupación de que pueda estar en riesgo mi patrimonio, ¿en Despacho Eugenio Molina me
                     pueden ayudar?
                 </div>
@@ -740,21 +145,20 @@
             </div>
 
             <!-- Contenedor para las fotos -->
-            <div class="imagenes-lado">
-                <img src="C:\Recursos Humanos\escritorio\paguinas web\proyecto\DespachoJuridico - copia\images\foto-3a.jpg"
-                    alt="Imagen 1" class="active">
-                <img src="C:\Recursos Humanos\escritorio\paguinas web\proyecto\DespachoJuridico - copia\images\foto-4a.jpg"
-                    alt="Imagen 2">
-                <img src="C:\Recursos Humanos\escritorio\paguinas web\proyecto\DespachoJuridico - copia\images\foto-5a.jpg"
-                    alt="Imagen 3">
+            <div class="imagenes-lado" role="region" aria-label="Carrusel de imagenes">
+                <img src="images/foto-3a.jpg" alt="Imagen 1" class="active">
+                <img src="images/foto-4a.jpg" alt="Imagen 2">
+                <img src="images/foto-5a.jpg" alt="Imagen 3">
 
-                <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
-                <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+                <button class="carousel-control prev" aria-label="Previous Slide" onclick="carousel.prevSlide()">
+                    &#10094;</button>
+                <button class="carousel-control next" aria-label="Next Slide" onclick="carousel.nextSlide()">
+                    &#10095;</button>
 
                 <div class="carousel-indicators">
-                    <div class="carousel-indicator active" onclick="goToSlide(0)"></div>
-                    <div class="carousel-indicator" onclick="goToSlide(1)"></div>
-                    <div class="carousel-indicator" onclick="goToSlide(2)"></div>
+                    <div class="carousel-indicator active" onclick="carousel.goToSlide(0)"></div>
+                    <div class="carousel-indicator" onclick="carousel.goToSlide(1)"></div>
+                    <div class="carousel-indicator" onclick="carousel.goToSlide(2)"></div>
                 </div>
             </div>
         </div>
@@ -800,75 +204,119 @@
             &copy; 2024 Despacho Juridico Virtual Lic.Eugenio Molina Cinco. Todos los derechos reservados.
         </div>
     </footer>
+
     <script>
-        function updateDateTime() {
-            const now = new Date();
+        (function () {
+            // Obtener el elemento del datetime
             const datetimeElement = document.getElementById("datetime");
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'America/Hermosillo' };
-            datetimeElement.textContent = now.toLocaleDateString('es-MX', options);
-        }
 
-        // Actualizar la fecha y hora cada segundo
-        setInterval(updateDateTime, 1000);
-
-        function toggleRespuesta(id) {
-            var respuesta = document.getElementById(id);
-            if (respuesta.style.display === "none") {
-                respuesta.style.display = "block";
-            } else {
-                respuesta.style.display = "none";
+            // Función para actualizar la fecha y hora
+            function updateDateTime() {
+                const now = new Date();
+                const options = {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    timeZone: 'America/Hermosillo'
+                };
+                datetimeElement.textContent = now.toLocaleDateString('es-MX', options);
             }
-        }
-        // Carrusel de imágenes
-        const imagenes = document.querySelectorAll('.imagenes-lado img');
-        const indicators = document.querySelectorAll('.carousel-indicator');
-        let index = 0;
-        let intervalId;
 
-        function updateIndicators() {
-            indicators.forEach((indicator, i) => {
-                indicator.classList.toggle('active', i === index);
+            // Llamar la función para actualizar la fecha y hora cada segundo
+            setInterval(updateDateTime, 1000);
+        })();
+
+        (function () {
+            const faq = {
+                toggleRespuesta: function (id) {
+                    var respuesta = document.getElementById(id);
+                    if (respuesta.style.display === "none") {
+                        respuesta.style.display = "block";
+                    } else {
+                        respuesta.style.display = "none";
+                    }
+                }
+            };
+
+            //Asignar evento click a las preguntas
+            const preguntas = document.querySelectorAll('.pregunta');
+            preguntas.forEach(pregunta => {
+                pregunta.addEventListener('click', function () {
+                    const respuestaId = this.dataset.respuesta;
+                    faq.toggleRespuesta(respuestaId);
+                });
             });
-        }
-        function showSlide(n) {
-            // Reset to 0 if n is out of range
-            index = (n + imagenes.length) % imagenes.length;
+        })();
 
-            // Hide all images
-            for (let i = 0; i < imagenes.length; i++) {
-                imagenes[i].classList.remove('active');
-            }
+        (function () {
+            const carousel = {
+                imagenes: document.querySelectorAll('.imagenes-lado img'),
+                indicators: document.querySelectorAll('.carousel-indicator'),
+                index: 0,
+                intervalId: null,
 
-            // Show the nth image
-            imagenes[index].classList.add('active');
-            updateIndicators();
+                updateIndicators: function () {
+                    this.indicators.forEach((indicator, i) => {
+                        indicator.classList.toggle('active', i === this.index);
+                    });
+                },
+                showSlide: function (n) {
+                    this.index = (n + this.imagenes.length) % this.imagenes.length;
 
-        }
+                    for (let i = 0; i < this.imagenes.length; i++) {
+                        this.imagenes[i].classList.remove('active');
+                    }
+                    this.imagenes[this.index].classList.add('active');
+                    this.updateIndicators();
+                },
+                nextSlide: function () {
+                    this.showSlide(this.index + 1);
+                },
+                prevSlide: function () {
+                    this.showSlide(this.index - 1);
+                },
+                goToSlide: function (n) {
+                    this.showSlide(n);
+                },
+                startCarousel: function () {
+                    this.intervalId = setInterval(() => this.nextSlide(), 3000);
 
-        function nextSlide() {
-            showSlide(index + 1);
-        }
+                },
+                stopCarousel: function () {
+                    clearInterval(this.intervalId);
+                },
+            };
 
-        function prevSlide() {
-            showSlide(index - 1);
-        }
+            //Inicilizar variables
 
-        function goToSlide(n) {
-            showSlide(n);
-        }
+            carousel.startCarousel();
+            carousel.imagenes[0].classList.add('active');
+            carousel.updateIndicators();
 
-        function startCarousel() {
-            intervalId = setInterval(nextSlide, 3000); // Change slide every 3 seconds
-        }
+            //Asignar carousel al ambito global
+            window.carousel = carousel;
 
-        function stopCarousel() {
-            clearInterval(intervalId);
-        }
+        })();
 
-        // Init
-        startCarousel();
-        imagenes[0].classList.add('active');
-        updateIndicators();
+        // Intersection Observer API para iniciar el carrusel cuando está visible
+        const carouselSection = document.querySelector('.imagenes-lado');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // El elemento está visible
+                    carousel.startCarousel();
+                } else {
+                    // El elemento no está visible
+                    carousel.stopCarousel();
+                }
+            });
+        });
+        observer.observe(carouselSection);
     </script>
 </body>
 
