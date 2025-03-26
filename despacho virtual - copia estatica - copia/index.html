@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despacho Jurídico Lic.Eugenio Molina Cinco</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="bg-[#0A2647] text-white py-4 px-6 moderno">
+        <div class="top-info">
+            Hermosillo, Sonora, Mexico <span id="datetime"></span>
+        </div>
+        <div>
+            <h1 class="text-2xl md:text-3xl">Despacho Jurídico</h1>
+            <h1 class="text-2xl md:text-3xl font-bold">
+                Lic.Eugenio Molina Cinco
+            </h1>
+        </div>
+        <nav class="nav">
+            <a href="#nosotros" class="hover:text-[#A5B4FC]">Nosotros</a>
+            <a href="#servicios" class="hover:text-[#A5B4FC]">Servicios</a>
+            <a href="#contacto" class="hover:text-[#A5B4FC]">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="imagen-con-texto">
+        <img src="images/foto-1a.jpg" alt="" />
+        <div class="texto-encima">Nuestro compromiso: Honestidad, seguimiento constante y soluciones prácticas que
+            garanticen resultados positivos.</div>
+    </section>
+
+    <section id="nosotros" class="py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex-container">
+                <div class="imagen-container">
+                    <img src="images/foto-2a.jpg" alt="Escudo oficial de la Universidad de Sonora"
+                        class="rounded-lg shadow-lg bg-white p-4" />
+                </div>
+                <div class="texto-container">
+                    <h2 class="text-3xl text-[#0A2647] mb-6 font-crimson-text">
+                        Lic. Eugenio Molina Cinco
+                    </h2>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Con más de dos décadas de trayectoria en el ámbito legal, el Lic.
+                        Lic.Eugenio Molina Cinco ha establecido un legado de excelencia en la
+                        práctica jurídica, respaldado por una sólida formación académica.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Egresado de la Universidad de Sonora (UNISON), Integramos a nuestros
+                        servicios legales el conocimiento de profesionales y acreditados especialistas,
+                        para buscar en todo momento el éxito, así como el bienestar personal y económico
+                        de nuestros clientes.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Las nuevas TECNOLOGÍAS se incorporan a la firma como parte de nuestros procesos
+                        de calidad en el servicio, no sólo para gestión y control interno, sino en la
+                        vinculación directa con nuestros clientes.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-award text-[#0A2647] text-2xl mr-2"></i>
+                            <span class="text-gray-700">20+ años de experiencia</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-university text-[#0A2647] text-2xl mr-2"></i>
+                            <span class="text-gray-700">Egresado UNISON</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-16 px-6">
+        <h2 class="text-3xl text-center text-[#0A2647] mb-12">
+            Nuestros Servicios
+        </h2>
+        <div class="max-w-6xl mx-auto servicios-container">
+            <div class="servicio-card">
+                <i class="fas fa-briefcase text-3xl text-[#0A2647] mb-4"></i>
+                <h3>Mercantiles</h3>
+                <p>Recuperación De Cartera Vencida Y Pagares En Vía Judicial. Juicios Hipotecarios, Contratos, Fianzas Y
+                    Pagare.</p>
+            </div>
+            <div class="servicio-card">
+                <i class="fas fa-gavel text-3xl text-[#0A2647] mb-4"></i>
+                <h3>Laboral</h3>
+                <p>Despidos Injustificados, Rescisión De Contratos Laboral Y Asesoría Patronal.</p>
+            </div>
+            <div class="servicio-card">
+                <i class="fas fa-home text-3xl text-[#0A2647] mb-4"></i>
+                <h3>Familiar</h3>
+                <p>Adopción, Alimentos, Convivencias, Divorcios, Liquidación de sociedades conyugales, Perdida de la
+                    patria potestad, Interdicción, Juicios testamentarios e intestamentarios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Preguntas Frecuentes y Carrusel -->
+    <section class="py-16 px-6">
+        <div class="preguntas-y-carrusel">
+            <div id="preguntas">
+                <h2 class="text-3xl text-center text-[#0A2647] mb-12">Preguntas Frecuentes</h2>
+
+                <div class="pregunta" onclick="toggleRespuesta('respuesta1')">
+                    Si mi aseguradora no me quiere pagar, ¿es necesario demandarlos?
+                </div>
+                <div class="respuesta" id="respuesta1">
+                    No siempre es necesario llegar a una demanda. A menudo, las disputas con las aseguradoras pueden
+                    resolverse a través de la negociación o la mediación. Nuestros abogados están preparados para
+                    evaluar tu caso y buscar la mejor vía para alcanzar una resolución justa y oportuna.
+                </div>
+
+                <div class="pregunta" onclick="toggleRespuesta('respuesta2')">
+                    Me han despedido de mi trabajo, ¿qué tengo que hacer?
+                </div>
+                <div class="respuesta" id="respuesta2">
+                    Si has sido despedido y crees que ha sido injusto o ilegal, es importante que busques
+                    asesoramiento legal cuanto antes. Podemos revisar las circunstancias de tu despido, aconsejarte
+                    sobre tus derechos y, si es necesario, representarte en acciones legales contra tu empleador.
+                </div>
+
+                <div class="pregunta" onclick="toggleRespuesta('respuesta3')">
+                    He decidido no continuar con mi matrimonio ¿Puedo divorciarme aunque mi pareja no esté de acuerdo?
+                </div>
+                <div class="respuesta" id="respuesta3">
+                    Sí, es posible obtener un divorcio en México incluso si tu pareja no está de acuerdo. Sin embargo,
+                    el proceso puede ser más complejo. En Eugenio Molina te ofrecemos la orientación y representación
+                    necesarias para abordar este proceso de la manera más ágil y respetuosa posible.
+                </div>
+
+                <div class="pregunta" onclick="toggleRespuesta('respuesta4')">
+                    Tengo la preocupación de que pueda estar en riesgo mi patrimonio, ¿en Despacho Eugenio Molina me
+                    pueden ayudar?
+                </div>
+                <div class="respuesta" id="respuesta4">
+                    Definitivamente. Ofrecemos servicios especializados en protección patrimonial. Evaluaremos tu
+                    situación para identificar riesgos potenciales y desarrollar estrategias para asegurar y proteger
+                    tus activos a largo plazo.
+                </div>
+            </div>
+
+            <!-- Contenedor para las fotos -->
+            <div class="imagenes-lado">
+                <img src="images/foto-3a.jpg" alt="Imagen 1" class="active">
+                <img src="images/foto-4a.jpg" alt="Imagen 2">
+                <img src="images/foto-5a.jpg" alt="Imagen 3">
+
+                <button class="carousel-control prev" onclick="prevSlide()">❮</button>
+                <button class="carousel-control next" onclick="nextSlide()">❯</button>
+
+                <div class="carousel-indicators">
+                    <div class="carousel-indicator active" onclick="goToSlide(0)"></div>
+                    <div class="carousel-indicator" onclick="goToSlide(1)"></div>
+                    <div class="carousel-indicator" onclick="goToSlide(2)"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Limpiar el float -->
+        <div style="clear: both;"></div>
+    </section>
+
+    <section id="contacto">
+        <h2 class="text-3xl text-center text-[#0A2647] mb-12" style="color:#000">Contacto</h2>
+        <div class="contact-container">
+            <div class="contact-details">
+                <h3 style="color:#000">Ponte en Contacto con Nosotros</h3>
+                <p style="color:#333">Estamos aquí para ayudarte. Contáctanos a través de los siguientes medios:</p>
+                <div class="contact-icons">
+                    <a href="https://wa.me/52662231447" target="_blank" class="whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://m.me/smol583" target="_blank" class="messenger">
+                        <i class="fab fa-facebook-messenger"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#0A2647] text-white py-4 px-6 moderno">
+        <div class="footer-info">
+            <h3>Despacho Jurídico Lic.Eugenio Molina Cinco</h3>
+            <p>Excelencia y profesionalismo en servicios legales</p>
+        </div>
+        <div class="footer-contact">
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" target="_blank" class="messenger"><i class="fab fa-facebook-messenger"></i></a>
+            </div>
+        </div>
+        <div class="footer-schedule">
+            <h3>Horario</h3>
+            <p>Lunes a Viernes</p>
+            <p>9:00 AM - 6:00 PM</p>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2024 Despacho Juridico Virtual Lic.Eugenio Molina Cinco. Todos los derechos reservados.
+        </div>
+    </footer>
+<script src="js/script.js"></script>
+</body>
+
+</html>
